@@ -9,7 +9,7 @@ Watch the accompanying YouTube video [here](https://youtu.be/_gmQZToTMac)! Hope 
 **First, clone this repository**
 
 ```bash
-git clone https://github.com/Sourish07/Super-Mario-Bros-RL.git
+git clone https://github.com/devin1126/super-mario-rl-example.git
 ```
 
 **Next, create a virtual environment**
