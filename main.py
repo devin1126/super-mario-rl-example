@@ -20,7 +20,7 @@ else:
 
 # Environment and training configuration
 ENV_NAME = 'SuperMarioBros-1-1-v0'
-SHOULD_TRAIN = False
+SHOULD_TRAIN = True # Set to False to load a pretrained model
 DISPLAY = True
 CKPT_SAVE_INTERVAL = 5000
 NUM_OF_EPISODES = 50_000
@@ -41,7 +41,7 @@ agent = Agent(input_dims=env.observation_space.shape, num_actions=env.action_spa
 if not SHOULD_TRAIN:
     folder_name = "2023-12-25-09_32_25"
     ckpt_name = "model_30000_iter.pt"
-    # agent.load_model(os.path.join("models", folder_name, ckpt_name))
+    agent.load_model(os.path.join("models", folder_name, ckpt_name))
     agent.epsilon = 0.05
     agent.eps_min = 0.0
     agent.eps_decay = 0.0
@@ -63,7 +63,8 @@ for i in range(NUM_OF_EPISODES):
         total_reward += reward
 
         if DISPLAY:
-            time.sleep(0.05)
+            #time.sleep(0.05)
+            pass
 
         if SHOULD_TRAIN:
             agent.store_in_memory(state, a, reward, new_state, done)
